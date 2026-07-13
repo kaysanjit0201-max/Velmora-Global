@@ -23,32 +23,38 @@
     <!-- Section 2: Header & Navigation -->
     <header class="header-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="index.html" class="nav-logo mobile-logo-only" id="main-logo-link">
                 <img src="assets/images/logo.jpg" alt="Velmora Global Logo" class="logo-img">
             </a>
             
             <nav class="nav-menu-wrapper">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-dropdown">
-                        <a href="services.html" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
+                    <li class="nav-dropdown" id="nav-worldwide-dropdown">
+                        <a href="services.html" class="nav-link" id="nav-worldwide">Worldwide Repatriation <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
                         <ul class="nav-dropdown-menu">
-                            <li class="nav-dropdown-item"><a href="inbound-repatriation.html">Inbound Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="outbound-repatriation.html">Outbound Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="domestic-repatriation.html">Domestic Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="ashes-repatriation.html">Ashes Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="consular-services.html">Consular Clearances</a></li>
-                            <li class="nav-dropdown-item"><a href="cargo-coordination.html">Cargo Booking & Flight Coordination</a></li>
+                            <li><a href="inbound-repatriation.html">Inbound Repatriation</a></li>
+                            <li><a href="outbound-repatriation.html">Outbound Repatriation</a></li>
+                            <li><a href="domestic-repatriation.html">Domestic Repatriation</a></li>
+                            <li><a href="ashes-repatriation.html">Ashes Repatriation</a></li>
+                            <li><a href="custom-clearance.html">Custom Clearances</a></li>
+                            <li><a href="cargo-coordination.html">Flight Cargo Booking</a></li>
                         </ul>
                     </li>
-                    <li><a href="process.html" class="nav-link">Our Process</a></li>
-                    <li><a href="global-network.html" class="nav-link">Network Hubs</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
-                    <li><a href="testimonials.html" class="nav-link">Stories</a></li>
-                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                    <li><a href="tel:+917991634187" class="nav-link nav-phone"><i class="fa-solid fa-phone"></i> +91 7991634187</a></li>
+                    <li><a href="funeral-transport.html" class="nav-link" id="nav-funeral">Funeral Transport</a></li>
+                    
+                    <!-- Centered Logo inside the nav menu -->
+                    <li class="logo-item">
+                        <a href="index.html" class="nav-logo">
+                            <img src="assets/images/logo.jpg" alt="Velmora Global Logo" class="logo-img-large">
+                        </a>
+                    </li>
+                    
+                    <li><a href="custom-clearance.html" class="nav-link" id="nav-custom">Custom Clearance</a></li>
+                    <li><a href="process.html" class="nav-link" id="nav-process">Our Process</a></li>
+                    <li><a href="testimonials.html" class="nav-link" id="nav-stories">Stories</a></li>
+                    <li><a href="contact.html" class="nav-link active" id="nav-contact">Contact</a></li>
                 </ul>
             </nav>
 
@@ -117,7 +123,7 @@
                         <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="contact-detail-text">
                             <h4>Delhi Headquarters Office</h4>
-                            <p>1/278/1, flat no. E-2, 4th floor, Rajpur Khurd Extn., near Ramchander Market, New Delhi - 110068</p>
+                            <p>1/278/1, Rajpur Khurd Extn., New Delhi - 110068</p>
                         </div>
                     </li>
                     <li class="contact-detail-item">
@@ -241,7 +247,7 @@
                     <li><a href="outbound-repatriation.html" class="footer-link">Outbound Repatriation from India</a></li>
                     <li><a href="domestic-repatriation.html" class="footer-link">Interstate Domestic Transport</a></li>
                     <li><a href="ashes-repatriation.html" class="footer-link">Ashes & Urns Clearance</a></li>
-                    <li><a href="consular-services.html" class="footer-link">Consulate Liaison NOCs</a></li>
+                    <li><a href="custom-clearance.html" class="footer-link">Custom Clearance NOCs</a></li>
                 </ul>
             </div>
             
@@ -250,7 +256,7 @@
                 <ul class="footer-contacts-list">
                     <li class="footer-contact-item">
                         <i class="fa-solid fa-location-dot footer-contact-icon"></i>
-                        <span>1/278/1, flat no. E-2, 4th floor, Rajpur Khurd Extn., near Ramchander Market, New Delhi - 110068</span>
+                        <span>1/278/1, Rajpur Khurd Extn., New Delhi - 110068</span>
                     </li>
                     <li class="footer-contact-item">
                         <i class="fa-solid fa-phone footer-contact-icon"></i>
@@ -274,8 +280,8 @@
     </footer>
 
     <!-- Dual Floating Interactive Actions -->
-    <a href="tel:+917991634187" class="call-float">
-        <i class="fa-solid fa-phone-volume"></i>
+    <a href="mailto:support@velmoraglobal.com" class="email-float">
+        <i class="fa-solid fa-envelope"></i>
     </a>
     <a href="https://wa.me/917991634187?text=Hello%20Velmora%20Global%2C%20I%20need%20urgent%20assistance%20with%20repatriation%20services." class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
@@ -285,6 +291,11 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

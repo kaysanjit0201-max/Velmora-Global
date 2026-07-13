@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,32 +23,38 @@
     <!-- Section 2: Header & Navigation -->
     <header class="header-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="index.html" class="nav-logo mobile-logo-only" id="main-logo-link">
                 <img src="assets/images/logo.jpg" alt="Velmora Global Logo" class="logo-img">
             </a>
             
             <nav class="nav-menu-wrapper">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-dropdown">
-                        <a href="services.html" class="nav-link">Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
+                    <li class="nav-dropdown" id="nav-worldwide-dropdown">
+                        <a href="services.html" class="nav-link" id="nav-worldwide">Worldwide Repatriation <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
                         <ul class="nav-dropdown-menu">
-                            <li class="nav-dropdown-item"><a href="inbound-repatriation.html">Inbound Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="outbound-repatriation.html">Outbound Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="domestic-repatriation.html">Domestic Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="ashes-repatriation.html">Ashes Repatriation</a></li>
-                            <li class="nav-dropdown-item"><a href="consular-services.html">Consular Clearances</a></li>
-                            <li class="nav-dropdown-item"><a href="cargo-coordination.html">Cargo Booking & Flight Coordination</a></li>
+                            <li><a href="inbound-repatriation.html">Inbound Repatriation</a></li>
+                            <li><a href="outbound-repatriation.html">Outbound Repatriation</a></li>
+                            <li><a href="domestic-repatriation.html">Domestic Repatriation</a></li>
+                            <li><a href="ashes-repatriation.html">Ashes Repatriation</a></li>
+                            <li><a href="custom-clearance.html">Custom Clearances</a></li>
+                            <li><a href="cargo-coordination.html">Flight Cargo Booking</a></li>
                         </ul>
                     </li>
-                    <li><a href="process.html" class="nav-link active">Our Process</a></li>
-                    <li><a href="global-network.html" class="nav-link">Network Hubs</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
-                    <li><a href="testimonials.html" class="nav-link">Stories</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="tel:+917991634187" class="nav-link nav-phone"><i class="fa-solid fa-phone"></i> +91 7991634187</a></li>
+                    <li><a href="funeral-transport.html" class="nav-link" id="nav-funeral">Funeral Transport</a></li>
+                    
+                    <!-- Centered Logo inside the nav menu -->
+                    <li class="logo-item">
+                        <a href="index.html" class="nav-logo">
+                            <img src="assets/images/logo.jpg" alt="Velmora Global Logo" class="logo-img-large">
+                        </a>
+                    </li>
+                    
+                    <li><a href="custom-clearance.html" class="nav-link" id="nav-custom">Custom Clearance</a></li>
+                    <li><a href="process.html" class="nav-link active" id="nav-process">Our Process</a></li>
+                    <li><a href="testimonials.html" class="nav-link" id="nav-stories">Stories</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
                 </ul>
             </nav>
 
@@ -95,6 +101,87 @@
         </div>
     </section>
 
+    </section>
+
+    <!-- New Section: When Death Occurs Overseas Protocol Grid -->
+    <section class="section bg-white" style="border-bottom: 1px solid rgba(197, 168, 128, 0.15);">
+        <div class="container animate-on-scroll">
+            <div class="section-header">
+                <span class="section-subtitle">Emergency Protocol</span>
+                <h2>When Death Occurs Overseas</h2>
+                <p class="section-desc">Connect with Velmora Global at <strong><a href="tel:+917991634187" style="color: var(--color-navy); text-decoration: underline;">+91 7991634187</a></strong> for immediate 24/7 assistance. We coordinate the entire 8-step protocol to bring your loved one home.</p>
+            </div>
+            
+            <div class="protocol-grid">
+                
+                <!-- Step 1 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">1</div>
+                    <i class="fa-solid fa-circle-question text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Initial Inquiry</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Notify our 24/7 Operations Desk immediately. We initiate file registration.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">2</div>
+                    <i class="fa-solid fa-comments text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Consultation</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Detailed assessment of legal rules, flight cargo bookings, and customs options.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">3</div>
+                    <i class="fa-solid fa-truck-medical text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Safe Transfer</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Securing remains and transferring them to a local certified preservation facility.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">4</div>
+                    <i class="fa-solid fa-shield-virus text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Preservation</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Certified sanitary prep and clinical embalming under IATA guidelines.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">5</div>
+                    <i class="fa-solid fa-folder-open text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Documentation</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Obtaining consular visas, death registries, and exit transit clearances.</p>
+                </div>
+
+                <!-- Step 6 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">6</div>
+                    <i class="fa-solid fa-box text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Casket Fitment</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Placement inside a hermetically sealed zinc outer coffin shell.</p>
+                </div>
+
+                <!-- Step 7 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">7</div>
+                    <i class="fa-solid fa-plane-departure text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Repatriation</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Airport health clearances and boarding onto global flight schedules.</p>
+                </div>
+
+                <!-- Step 8 -->
+                <div style="background-color: #ffffff; padding: 2rem; border-radius: var(--border-radius-sm); border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 50px; height: 50px; background-color: var(--color-navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1.25rem;">8</div>
+                    <i class="fa-solid fa-handshake-angle text-gold" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--color-navy); font-weight: 600;">Handoff Support</h4>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Import custom clearances at destinations and handoff to families.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Section 5: Detailed Process Timeline -->
     <section class="section bg-warm" style="border-bottom: 1px solid rgba(197, 168, 128, 0.15);">
         <div class="container animate-on-scroll">
@@ -120,7 +207,7 @@
                 <div class="timeline-step animate-on-scroll">
                     <div class="timeline-badge">2</div>
                     <div class="timeline-panel">
-                        <h3 class="timeline-panel-title">Consular Clearance & Translation</h3>
+                        <h3 class="timeline-panel-title">Custom Clearance & Translation</h3>
                         <p class="timeline-panel-desc">We dispatch legal runners to embassies to secure death registration stamps, passport cancellations, and consulate NOC certificates. If required, certified translation of coroner records is processed.</p>
                     </div>
                 </div>
@@ -243,7 +330,7 @@
                     <li><a href="outbound-repatriation.html" class="footer-link">Outbound Repatriation from India</a></li>
                     <li><a href="domestic-repatriation.html" class="footer-link">Interstate Domestic Transport</a></li>
                     <li><a href="ashes-repatriation.html" class="footer-link">Ashes & Urns Clearance</a></li>
-                    <li><a href="consular-services.html" class="footer-link">Consulate Liaison NOCs</a></li>
+                    <li><a href="custom-clearance.html" class="footer-link">Custom Clearance NOCs</a></li>
                 </ul>
             </div>
             
@@ -252,7 +339,7 @@
                 <ul class="footer-contacts-list">
                     <li class="footer-contact-item">
                         <i class="fa-solid fa-location-dot footer-contact-icon"></i>
-                        <span>1/278/1, flat no. E-2, 4th floor, Rajpur Khurd Extn., near Ramchander Market, New Delhi - 110068</span>
+                        <span>1/278/1, Rajpur Khurd Extn., New Delhi - 110068</span>
                     </li>
                     <li class="footer-contact-item">
                         <i class="fa-solid fa-phone footer-contact-icon"></i>
@@ -276,8 +363,8 @@
     </footer>
 
     <!-- Dual Floating Interactive Actions -->
-    <a href="tel:+917991634187" class="call-float">
-        <i class="fa-solid fa-phone-volume"></i>
+    <a href="mailto:support@velmoraglobal.com" class="email-float">
+        <i class="fa-solid fa-envelope"></i>
     </a>
     <a href="https://wa.me/917991634187?text=Hello%20Velmora%20Global%2C%20I%20need%20urgent%20assistance%20with%20repatriation%20services." class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
@@ -287,6 +374,11 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

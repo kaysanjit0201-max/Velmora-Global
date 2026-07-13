@@ -13,7 +13,55 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollAnimations();
     initAutoplayCarousel();
     initTestimonialsPageSlider();
+    initHeroLogoIcon();
 });
+
+/* -------------------------------------------------------------
+ * 0. Dynamic Canvas Logo Icon Background Remover
+ * ------------------------------------------------------------- */
+function initHeroLogoIcon() {
+    const heroImg = document.getElementById('hero-logo-icon');
+    if (!heroImg) return;
+
+    const img = new Image();
+    img.src = 'assets/images/logo_icon.jpg';
+    img.onload = function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        
+        try {
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imgData.data;
+            
+            // Loop through pixels and make white transparent
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i+1];
+                const b = data[i+2];
+                // If RGB is close to white (value > 240)
+                if (r > 240 && g > 240 && b > 240) {
+                    data[i+3] = 0; // Alpha: 0 (Transparent)
+                }
+            }
+            
+            ctx.putImageData(imgData, 0, 0);
+            heroImg.src = canvas.toDataURL('image/png');
+            heroImg.style.opacity = 1;
+        } catch (e) {
+            // Fallback for CORS or canvas exceptions: use original image directly
+            heroImg.src = 'assets/images/logo_icon.jpg';
+            heroImg.style.opacity = 1;
+        }
+    };
+    img.onerror = function() {
+        // Fallback if image doesn't load
+        heroImg.src = 'assets/images/logo_icon.jpg';
+        heroImg.style.opacity = 1;
+    };
+}
 
 /* -------------------------------------------------------------
  * 1. Clean URL Local Fallback for offline browsing
@@ -393,13 +441,41 @@ function initReachMap() {
  * ------------------------------------------------------------- */
 const COUNTRY_NAMES = {
     "IN": "India",
-    "AE": "United Arab Emirates (UAE)",
-    "GB": "United Kingdom (UK)",
     "US": "United States of America (USA)",
-    "SA": "Saudi Arabia",
+    "GB": "United Kingdom (UK)",
     "SG": "Singapore",
-    "CA": "Canada",
-    "AU": "Australia"
+    "JP": "Japan",
+    "UG": "Uganda",
+    "AU": "Australia",
+    "TZ": "Tanzania",
+    "PH": "Philippines",
+    "RU": "Russia",
+    "PL": "Poland",
+    "MV": "Maldives",
+    "LK": "Sri Lanka",
+    "VN": "Vietnam",
+    "AE": "United Arab Emirates (UAE)",
+    "TH": "Thailand",
+    "MM": "Myanmar",
+    "LA": "Laos",
+    "IL": "Israel",
+    "ID": "Indonesia",
+    "IT": "Italy",
+    "DE": "Germany",
+    "OM": "Oman",
+    "PT": "Portugal",
+    "ES": "Spain",
+    "MA": "Morocco",
+    "AT": "Austria",
+    "CN": "China",
+    "ME": "Montenegro",
+    "CZ": "Czech Republic",
+    "FR": "France",
+    "BE": "Belgium",
+    "NZ": "New Zealand",
+    "MY": "Malaysia",
+    "ZA": "South Africa",
+    "GH": "Ghana"
 };
 
 const DOCS_LIST = {
@@ -440,21 +516,29 @@ const DOCS_LIST = {
 };
 
 const PRICING_TARIFFS = {
-    "GB-IN": { cost: "£2,600 - £3,400", time: "3 - 5 Days", type: "inbound", label: "UK to India Inbound" },
-    "AE-IN": { cost: "AED 9,000 - AED 12,500", time: "2 - 3 Days", type: "inbound", label: "UAE to India Inbound" },
-    "US-IN": { cost: "$4,200 - $5,800", time: "5 - 7 Days", type: "inbound", label: "USA to India Inbound" },
-    "CA-IN": { cost: "CAD 5,800 - CAD 7,500", time: "5 - 7 Days", type: "inbound", label: "Canada to India Inbound" },
-    "SA-IN": { cost: "SAR 11,000 - SAR 14,000", time: "3 - 4 Days", type: "inbound", label: "Saudi Arabia to India Inbound" },
-    "SG-IN": { cost: "SGD 4,500 - SGD 6,000", time: "2 - 4 Days", type: "inbound", label: "Singapore to India Inbound" },
-    "AU-IN": { cost: "AUD 6,500 - AUD 8,500", time: "4 - 6 Days", type: "inbound", label: "Australia to India Inbound" },
+    // UK
+    "GB-IN": { cost: "€6,500 - €7,500", time: "5 - 7 Working Days", type: "inbound", label: "UK to India Inbound" },
+    "IN-GB": { cost: "€6,500 - €7,500", time: "5 - 7 Working Days", type: "outbound", label: "India to UK Outbound" },
     
-    "IN-GB": { cost: "₹2,20,000 - ₹2,90,000", time: "4 - 6 Days", type: "outbound", label: "India to UK Outbound" },
-    "IN-AE": { cost: "₹1,80,000 - ₹2,40,000", time: "3 - 4 Days", type: "outbound", label: "India to UAE Outbound" },
-    "IN-US": { cost: "₹3,50,000 - ₹4,50,000", time: "5 - 8 Days", type: "outbound", label: "India to USA Outbound" },
-    "IN-CA": { cost: "₹3,80,000 - ₹4,80,000", time: "5 - 8 Days", type: "outbound", label: "India to Canada Outbound" },
-    "IN-SA": { cost: "₹1,90,000 - ₹2,50,000", time: "4 - 5 Days", type: "outbound", label: "India to Saudi Arabia Outbound" },
-    "IN-SG": { cost: "₹2,10,000 - ₹2,80,000", time: "3 - 5 Days", type: "outbound", label: "India to Singapore Outbound" },
-    "IN-AU": { cost: "₹2,80,000 - ₹3,60,000", time: "5 - 7 Days", type: "outbound", label: "India to Australia Outbound" }
+    // USA
+    "US-IN": { cost: "USD 7,500 - USD 10,500", time: "5 - 7 Working Days", type: "inbound", label: "USA to India Inbound" },
+    "IN-US": { cost: "USD 7,500 - USD 10,500", time: "5 - 7 Working Days", type: "outbound", label: "India to USA Outbound" },
+    
+    // Singapore
+    "SG-IN": { cost: "SGD 3,800 - SGD 4,200", time: "2 - 4 Working Days", type: "inbound", label: "Singapore to India Inbound" },
+    "IN-SG": { cost: "SGD 3,800 - SGD 4,200", time: "3 - 5 Working Days", type: "outbound", label: "India to Singapore Outbound" },
+    
+    // UAE (Doubled)
+    "AE-IN": { cost: "AED 18,000 - AED 25,000", time: "2 - 3 Working Days", type: "inbound", label: "UAE to India Inbound" },
+    "IN-AE": { cost: "₹3,60,000 - ₹4,80,000", time: "3 - 4 Working Days", type: "outbound", label: "India to UAE Outbound" },
+    
+    // Saudi Arabia (Doubled)
+    "SA-IN": { cost: "SAR 22,000 - SAR 28,000", time: "3 - 4 Working Days", type: "inbound", label: "Saudi Arabia to India Inbound" },
+    "IN-SA": { cost: "₹3,80,000 - ₹5,00,000", time: "4 - 5 Working Days", type: "outbound", label: "India to Saudi Arabia Outbound" },
+    
+    // Australia (Doubled)
+    "AU-IN": { cost: "AUD 13,000 - AUD 17,000", time: "4 - 6 Working Days", type: "inbound", label: "Australia to India Inbound" },
+    "IN-AU": { cost: "₹5,60,000 - ₹7,20,000", time: "5 - 7 Working Days", type: "outbound", label: "India to Australia Outbound" }
 };
 
 function initCostCalculator() {
@@ -487,7 +571,7 @@ function initCostCalculator() {
         if (sourceVal === "IN" && destVal === "IN") {
             tariff = {
                 cost: "₹65,000 - ₹1,20,000",
-                time: "1 - 2 Days",
+                time: "1 - 2 Working Days",
                 type: "domestic",
                 label: "Domestic Repatriation (Within India)"
             };
@@ -498,15 +582,15 @@ function initCostCalculator() {
             if (tariff) {
                 // Ashes is generally cheaper than human remains cargo
                 tariff = {
-                    cost: sourceVal === "IN" ? "₹85,000 - ₹1,40,000" : "USD 1,200 - USD 2,200",
+                    cost: sourceVal === "IN" ? "₹1,70,000 - ₹2,80,000" : "USD 3,000 - USD 5,000",
                     time: tariff.time,
                     type: "ashes",
                     label: tariff.label.replace("Inbound", "Ashes").replace("Outbound", "Ashes")
                 };
             } else {
                 tariff = {
-                    cost: "USD 1,500 - USD 2,500",
-                    time: "3 - 5 Days",
+                    cost: "USD 3,000 - USD 5,000",
+                    time: "3 - 5 Working Days",
                     type: "ashes",
                     label: `Custom Ashes Lane (${COUNTRY_NAMES[sourceVal]} to ${COUNTRY_NAMES[destVal]})`
                 };
@@ -514,11 +598,11 @@ function initCostCalculator() {
         } else if (tariff) {
             documentType = tariff.type;
         } else {
-            // General custom international lane
+            // General custom international lane (Doubled)
             const isOutbound = (sourceVal === "IN");
             tariff = {
-                cost: isOutbound ? "₹2,50,000 - ₹3,80,000" : "USD 3,500 - USD 5,200",
-                time: "4 - 7 Days",
+                cost: isOutbound ? "₹5,00,000 - ₹7,60,000" : "USD 7,000 - USD 10,400",
+                time: "4 - 7 Working Days",
                 type: isOutbound ? "outbound" : "inbound",
                 label: `International Lane (${COUNTRY_NAMES[sourceVal]} to ${COUNTRY_NAMES[destVal]})`
             };

@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * Velmora Global - Core Design System & Stylesheet
  * Custom Design matching Navy & Gold Brand Identity
  * Optimized for SEO, High-Performance Static Hosting
@@ -46,13 +46,21 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--font-body);
     background-color: var(--color-bg-warm);
+    background-image: linear-gradient(rgba(250, 246, 238, 0.15), rgba(245, 241, 231, 0.25)), url('../images/bg_clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax scrolling clouds */
     color: var(--color-text-dark);
     line-height: 1.6;
+    max-width: 100%;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -118,7 +126,13 @@ p {
 .bg-navy { background-color: var(--color-navy); }
 .bg-navy-dark { background-color: var(--color-navy-dark); }
 .bg-warm { background-color: var(--color-bg-warm); }
-.bg-white { background-color: var(--color-bg-white); }
+.bg-white { 
+    background-color: var(--color-bg-warm);
+    background-image: linear-gradient(rgba(250, 246, 238, 0.1), rgba(245, 241, 231, 0.2)), url('../images/bg_clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .section {
     padding: clamp(3.5rem, 7vw, 7rem) 5%;
@@ -349,7 +363,7 @@ p {
     transform: translateX(-50%) translateY(0);
 }
 
-.nav-dropdown-item a {
+.nav-dropdown-menu li a {
     display: block;
     padding: 0.65rem 1.5rem;
     font-size: 0.8rem;
@@ -360,7 +374,7 @@ p {
     transition: var(--transition-fast);
 }
 
-.nav-dropdown-item a:hover {
+.nav-dropdown-menu li a:hover {
     background-color: var(--color-bg-warm);
     color: var(--color-gold-dark);
 }
@@ -635,28 +649,30 @@ p {
  * 7. Interactive SVG Global reach map
  * ------------------------------------------------------------- */
 .map-section {
-    background-color: var(--color-navy-dark);
-    color: var(--color-bg-white);
+    background-color: var(--color-bg-warm);
+    color: var(--color-navy);
     overflow: hidden;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
 }
 
 .map-section .section-title {
-    color: var(--color-bg-white);
+    color: var(--color-navy);
 }
 
 .map-section .section-desc {
-    color: rgba(244, 245, 247, 0.7);
+    color: var(--color-text-muted);
 }
 
 .map-wrapper {
     position: relative;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     aspect-ratio: 1.6;
-    background-color: rgba(11, 27, 43, 0.4);
-    border: 1px solid rgba(197, 168, 128, 0.15);
+    background-color: #aed3ed; /* Light Blue for ocean */
+    border: 1px solid rgba(197, 168, 128, 0.25);
     border-radius: var(--border-radius-md);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(11, 27, 43, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -670,22 +686,24 @@ p {
 
 /* Map paths styling */
 .cls-1 {
-    fill: #162E48 !important;
-    stroke: #0A1C2A !important;
-    stroke-width: 0.5px !important;
+    fill: #d2c4b1 !important; /* Muddy color for general land area */
+    stroke: #222222 !important; /* Black for outlines */
+    stroke-width: 0.35px !important;
     transition: var(--transition-smooth);
 }
 
 .interactive-country-path {
     cursor: pointer;
-    fill: #1C3857 !important;
-    stroke: rgba(197, 168, 128, 0.25) !important;
+    fill: #2d6a4f !important; /* Rich Green for forest/active area */
+    stroke: #222222 !important; /* Black for outlines */
+    stroke-width: 0.35px !important;
 }
 
 .interactive-country-path:hover,
 .interactive-country-path.highlighted {
-    fill: var(--color-gold-trans) !important;
-    stroke: var(--color-gold) !important;
+    fill: #1b4332 !important; /* Deeper Green on hover */
+    stroke: #000000 !important;
+    stroke-width: 0.5px !important;
 }
 
 .map-hub {
@@ -786,7 +804,7 @@ p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: rgba(244, 245, 247, 0.7);
+    color: var(--color-navy-muted); /* Dark text color for light background */
     cursor: pointer;
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
@@ -796,9 +814,9 @@ p {
 
 .legend-item:hover,
 .legend-item.active {
-    color: var(--color-bg-white);
-    background-color: rgba(197, 168, 128, 0.1);
-    border-color: rgba(197, 168, 128, 0.3);
+    color: var(--color-navy); /* Darker active text color */
+    background-color: rgba(197, 168, 128, 0.15);
+    border-color: rgba(197, 168, 128, 0.45);
 }
 
 .legend-dot {
@@ -1478,7 +1496,7 @@ p {
  * 14. Dual Floating Interactive Actions (Phone + WhatsApp)
  * ------------------------------------------------------------- */
 /* Floating Helpline Call Button (Bottom Left, Gold) */
-.call-float {
+.call-float, .email-float {
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -1497,7 +1515,7 @@ p {
     transition: var(--transition-smooth);
 }
 
-.call-float::before {
+.call-float::before, .email-float::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -1508,7 +1526,7 @@ p {
     animation: goldPulse 2s infinite;
 }
 
-.call-float:hover {
+.call-float:hover, .email-float:hover {
     transform: scale(1.08) translateY(-3px);
     box-shadow: 0 8px 24px rgba(197, 168, 128, 0.5);
     background-color: #b5986e;
@@ -1613,22 +1631,24 @@ p {
 .nav-menu-overlay .nav-dropdown-menu {
     position: static;
     transform: none;
-    background-color: rgba(255,255,255,0.05);
+    background-color: rgba(255, 255, 255, 0.08);
     border: none;
     box-shadow: none;
     opacity: 1;
     visibility: visible;
     display: none; /* Controlled via JS toggle */
-    min-width: 100%;
+    width: 100%;
+    min-width: 0; /* Reset desktop 250px min-width */
     margin-top: 0.5rem;
     padding: 0.5rem 0;
+    list-style: none;
 }
 
 .nav-menu-overlay .nav-dropdown.active .nav-dropdown-menu {
     display: block;
 }
 
-.nav-menu-overlay .nav-dropdown-item a {
+.nav-menu-overlay .nav-dropdown-menu li a {
     color: var(--color-gold-light);
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
@@ -1828,7 +1848,7 @@ p {
         height: 50px;
         font-size: 24px;
     }
-    .call-float {
+    .call-float, .email-float {
         bottom: 20px;
         left: 20px;
         width: 50px;
@@ -2035,7 +2055,102 @@ ul li:hover {
     }
 }
 
+/* Centered Logo Split Nav Layout styles */
+@media (min-width: 1025px) {
+    .mobile-logo-only {
+        display: none !important;
+    }
+    .logo-item {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1.5rem;
+    }
+    .logo-img-large {
+        height: 104px !important; /* 2x size of original 52px */
+        width: auto;
+        display: block;
+        object-fit: contain;
+    }
+    .nav-container {
+        justify-content: center !important;
+        max-width: 1400px;
+        padding: 0.1rem 2%;
+    }
+    .nav-menu-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
 
+@media (max-width: 1024px) {
+    .logo-item {
+        display: none !important;
+    }
+    .mobile-logo-only {
+        display: flex !important;
+    }
+}
 
+/* -------------------------------------------------------------
+ * 20. Protocol Grid (8-step process layout)
+ * ------------------------------------------------------------- */
+.protocol-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+}
 
+@media (max-width: 992px) {
+    .protocol-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 576px) {
+    .protocol-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------------------------------------------------
+ * 21. Light Cloud & Funeral Comfort Background Gradients
+ * ------------------------------------------------------------- */
+.bg-clouds {
+    background-color: var(--color-bg-warm);
+    background-image: linear-gradient(rgba(250, 246, 238, 0.1), rgba(245, 241, 231, 0.2)), url('../images/bg_clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-lilies {
+    background-color: var(--color-bg-warm);
+    background-image: linear-gradient(rgba(250, 246, 238, 0.1), rgba(245, 241, 231, 0.2)), url('../images/bg_lilies.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-flight {
+    background-color: var(--color-bg-warm);
+    background-image: linear-gradient(rgba(250, 246, 238, 0.1), rgba(245, 241, 231, 0.2)), url('../images/bg_flight.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-memorial {
+    background-color: var(--color-bg-warm);
+    background-image: linear-gradient(rgba(250, 246, 238, 0.1), rgba(245, 241, 231, 0.2)), url('../images/bg_memorial.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

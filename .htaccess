@@ -1,0 +1,11 @@
+# Turn Rewrite Engine On
+RewriteEngine On
+
+# Redirect external .html requests to extensionless URLs (e.g. services.html -> services)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Internal rewrite: map extensionless requests back to the .html files (e.g. services -> services.html)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)/?$ $1.html [L]
