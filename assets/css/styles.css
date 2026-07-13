@@ -1628,6 +1628,14 @@ p {
     padding: 0.5rem;
 }
 
+.nav-menu-overlay .sub-nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+    padding: 0.35rem 0.5rem !important;
+    letter-spacing: 0.5px !important;
+}
+
 .nav-menu-overlay .nav-dropdown {
     display: flex !important;
     flex-direction: column !important;

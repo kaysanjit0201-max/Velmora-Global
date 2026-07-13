@@ -140,10 +140,45 @@ function initMobileMenu() {
     closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     overlay.appendChild(closeBtn);
 
-    // Clone the main nav menu
+    // Clone the main nav menu and flatten nested dropdown lists for mobile view
     const originalNav = document.querySelector('.nav-menu');
     if (originalNav) {
         const clonedNav = originalNav.cloneNode(true);
+        
+        // Find dropdown container and flatten it
+        const dropdownItem = clonedNav.querySelector('.nav-dropdown');
+        if (dropdownItem) {
+            const subMenu = dropdownItem.querySelector('.nav-dropdown-menu');
+            if (subMenu) {
+                const subItems = Array.from(subMenu.querySelectorAll('li'));
+                let currentItem = dropdownItem;
+                
+                subItems.forEach(item => {
+                    const originalLink = item.querySelector('a');
+                    if (originalLink) {
+                        const flatLi = document.createElement('li');
+                        const flatLink = document.createElement('a');
+                        flatLink.href = originalLink.getAttribute('href');
+                        flatLink.className = 'nav-link sub-nav-link';
+                        flatLink.textContent = `— ${originalLink.textContent}`; // Add dash prefix for visual hierarchy
+                        flatLi.appendChild(flatLink);
+                        
+                        currentItem.after(flatLi);
+                        currentItem = flatLi;
+                    }
+                });
+                
+                // Remove nested menu list completely
+                subMenu.remove();
+                
+                // Remove chevron icon from the main link
+                const mainLink = dropdownItem.querySelector('.nav-link');
+                if (mainLink) {
+                    mainLink.innerHTML = 'Worldwide Repatriation';
+                }
+            }
+        }
+        
         overlay.appendChild(clonedNav);
     }
 
@@ -165,36 +200,10 @@ function initMobileMenu() {
     closeBtn.addEventListener('click', closeMenu);
 
     // Overlay links close overlay upon click
-    const overlayLinks = overlay.querySelectorAll('.nav-link:not(.nav-dropdown > a)');
+    const overlayLinks = overlay.querySelectorAll('.nav-link');
     overlayLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
-
-    // Handle Mobile Collapsible dropdown menu for Services
-    const dropdownItem = overlay.querySelector('.nav-dropdown');
-    if (dropdownItem) {
-        const trigger = dropdownItem.querySelector('.nav-link');
-        trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdownItem.classList.toggle('active');
-            
-            // Toggle dropdown chevron icon
-            const icon = trigger.querySelector('i');
-            if (icon) {
-                if (dropdownItem.classList.contains('active')) {
-                    icon.className = 'fa-solid fa-chevron-up';
-                } else {
-                    icon.className = 'fa-solid fa-chevron-down';
-                }
-            }
-        });
-        
-        // Let dropdown items close the menu when clicked
-        const submenuLinks = dropdownItem.querySelectorAll('.nav-dropdown-menu a');
-        submenuLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-    }
 }
 
 /* -------------------------------------------------------------
