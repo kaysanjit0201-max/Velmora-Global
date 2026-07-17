@@ -134,11 +134,19 @@ function initMobileMenu() {
     const overlay = document.createElement('div');
     overlay.className = 'nav-menu-overlay';
     
-    // Add close button
-    const closeBtn = document.createElement('div');
-    closeBtn.className = 'nav-close';
-    closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    overlay.appendChild(closeBtn);
+    // Add premium overlay header
+    const overlayHeader = document.createElement('div');
+    overlayHeader.className = 'overlay-header';
+    overlayHeader.innerHTML = `
+        <a href="index.html" class="overlay-logo">
+            <img src="assets/images/logo.png" alt="Velmora Global Logo" class="overlay-logo-img">
+        </a>
+        <div class="nav-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    `;
+    overlay.appendChild(overlayHeader);
+    const closeBtn = overlayHeader.querySelector('.nav-close');
 
     // Clone the main nav menu and flatten nested dropdown lists for mobile view
     const originalNav = document.querySelector('.nav-menu');
