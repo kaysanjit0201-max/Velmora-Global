@@ -1679,7 +1679,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     padding: 1.5rem 1.75rem 3rem;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1725,7 +1725,7 @@ p {
     display: flex !important;
     flex-direction: column;
     gap: 1.25rem;
-    text-align: left;
+    text-align: center;
     width: 100%;
     max-width: 100%;
     list-style: none;
@@ -1743,18 +1743,18 @@ p {
     width: 100%;
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    text-align: left;
+    text-align: center;
 }
 
 .nav-menu-overlay .sub-nav-link {
     color: rgba(255, 255, 255, 0.7) !important;
     font-size: 1.1rem !important;
     font-weight: 400 !important;
-    padding: 0.4rem 0 0.4rem 1.25rem !important;
+    padding: 0.4rem 0 !important;
     letter-spacing: 0.5px !important;
     text-transform: capitalize !important;
     border-bottom: none !important;
-    text-align: left;
+    text-align: center;
     display: block;
 }
 
@@ -1767,7 +1767,7 @@ p {
 .nav-menu-overlay .nav-dropdown {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     width: 100% !important;
 }
 
@@ -1785,7 +1785,7 @@ p {
     margin-top: 0.5rem !important;
     padding: 0.5rem 0 !important;
     list-style: none !important;
-    text-align: left !important;
+    text-align: center !important;
 }
 
 .nav-menu-overlay .nav-dropdown.active .nav-dropdown-menu {
