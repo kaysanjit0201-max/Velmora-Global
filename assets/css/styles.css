@@ -1907,6 +1907,11 @@ p {
         transform: rotate(-45deg) translate(5px, -5px);
         background-color: var(--color-bg-white);
     }
+
+    .hero-section {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
     
     .timeline-line {
         left: 20px;
