@@ -38,14 +38,15 @@
                     <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
                     <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
                     <li class="nav-dropdown" id="nav-worldwide-dropdown">
-                        <a href="services.html" class="nav-link active" id="nav-worldwide">Worldwide<br class="nav-br">Repatriation <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                        <a href="javascript:void(0)" class="nav-link active" id="nav-worldwide" style="cursor: default;">Worldwide<br class="nav-br">Repatriation <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
                         <ul class="nav-dropdown-menu">
+                            <li><a href="services.html">Worldwide Repatriation</a></li>
+                            <li><a href="human-repatriation.html" class="nav-highlight-blue">Human Repatriation</a></li>
                             <li><a href="inbound-repatriation.html">Inbound Repatriation</a></li>
                             <li><a href="outbound-repatriation.html">Outbound Repatriation</a></li>
                             <li><a href="domestic-repatriation.html">Domestic Repatriation</a></li>
                             <li><a href="ashes-repatriation.html">Ashes Repatriation</a></li>
                             <li><a href="custom-clearance.html">Custom Clearances</a></li>
-                            <li><a href="cargo-coordination.html">Flight Cargo Booking</a></li>
                         </ul>
                     </li>
                     <li><a href="funeral-transport.html" class="nav-link" id="nav-funeral">Funeral<br class="nav-br">Transport</a></li>
@@ -81,7 +82,7 @@
         <div class="container animate-on-scroll" style="position: relative; z-index: 2; text-align: center;">
             <span class="hero-tagline">What We Do</span>
             <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; color: #fff;">Repatriation Solutions</h1>
-            <p class="hero-desc" style="margin: 0 auto; max-width: 700px; color: rgba(255,255,255,0.85);">Dignified transit, embassy clearances, and air cargo booking. Structured logistics for human remains and cremated ashes.</p>
+            <p class="hero-desc" style="margin: 0 auto; max-width: 700px; color: rgba(255,255,255,0.85);">Dignified transit, embassy clearances, and human remains coordination. Structured logistics for human remains and cremated ashes.</p>
         </div>
     </section>
 
@@ -107,15 +108,15 @@
         </div>
     </section>
 
-    <!-- Section 5: Services Grid Deep Dive -->
-    <section class="section bg-white" style="border-bottom: 1px solid rgba(197, 168, 128, 0.15);">
+    <!-- Section 5.1: Services Grid Deep Dive - Part 1 (Inbound & Outbound) -->
+    <section class="section bg-clouds" style="border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding: 5rem 0;">
         <div class="container" style="max-width: 1000px; display: flex; flex-direction: column; gap: 5rem;">
             
             <!-- Service 1 -->
             <div class="calc-grid animate-on-scroll" style="align-items: center; border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding-bottom: 4rem;">
                 <div>
                     <span class="section-subtitle">Global to Local</span>
-                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-plane-arrival text-gold" style="margin-right: 10px;"></i> Inbound International Repatriation</h2>
+                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-plane-arrival text-gold" style="margin-right: 10px;"></i> Inbound Repatriation</h2>
                     <p style="margin-bottom: 1.5rem;">Bringing deceased remains back to India from a foreign country requires coordinating between international morgues, customs units, and diplomatic offices. Velmora Global acts as your trusted partner, organizing the entire chain of transit.</p>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Registration on the Government of India eCARe portal.</li>
@@ -123,23 +124,23 @@
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Customs clearance at international cargo terminals in India.</li>
                     </ul>
                 </div>
-                <div style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_international.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md);">
+                <div class="service-card-interactive" style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_international.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md);">
                     <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">Main Inbound Lanes</h4>
                     <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">We coordinate frequent imports of remains from the Middle East, UK, North America, and Singapore.</p>
-                    <a href="index.html#calculator" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">Check Documents Needed</a>
+                    <a href="inbound-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Inbound Service</a>
                 </div>
             </div>
 
             <!-- Service 2 -->
-            <div class="calc-grid animate-on-scroll" style="align-items: center; border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding-bottom: 4rem;">
-                <div style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_outbound.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md); order: 2;">
+            <div class="calc-grid animate-on-scroll" style="align-items: center; padding-bottom: 2rem;">
+                <div class="service-card-interactive" style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_outbound.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md); order: 2;">
                     <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">Compliance First</h4>
                     <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">We provide standard packaging certificates and coordinate with Airport Health Officers (APHO) at departure.</p>
-                    <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">Brief Our Team</a>
+                    <a href="outbound-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Outbound Service</a>
                 </div>
                 <div style="order: 1;">
                     <span class="section-subtitle">Local to Global</span>
-                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-plane-departure text-gold" style="margin-right: 10px;"></i> Outbound International Repatriation</h2>
+                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-plane-departure text-gold" style="margin-right: 10px;"></i> Outbound Repatriation</h2>
                     <p style="margin-bottom: 1.5rem;">For foreign nationals deceased in India, or Indian nationals whose final rites are to be held abroad, we manage export logistics from our operations base in New Delhi.</p>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Procuring Municipal Death Certificates and post-mortem logs.</li>
@@ -149,11 +150,18 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Section 5.2: Services Grid Deep Dive - Part 2 (Domestic & Ashes) -->
+    <section class="section bg-warm" style="border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding: 5rem 0;">
+        <div class="container" style="max-width: 1000px; display: flex; flex-direction: column; gap: 5rem;">
+
             <!-- Service 3 -->
             <div class="calc-grid animate-on-scroll" style="align-items: center; border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding-bottom: 4rem;">
                 <div>
                     <span class="section-subtitle">Within Borders</span>
-                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-truck-medical text-gold" style="margin-right: 10px;"></i> Interstate Domestic Transport</h2>
+                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-truck-medical text-gold" style="margin-right: 10px;"></i> Domestic Repatriation</h2>
                     <p style="margin-bottom: 1.5rem;">When transferring remains across states within India, we provide ground ambulance coordinate logs or secure bookings on domestic commercial flight cargo routes.</p>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Specially customized, climate-regulated ground dispatches.</li>
@@ -161,23 +169,23 @@
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Police NOC clearances and local magistrate transport permits.</li>
                     </ul>
                 </div>
-                <div style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_domestic.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md);">
+                <div class="service-card-interactive" style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_domestic.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md);">
                     <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">Domestic Network</h4>
                     <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">We coordinate transport from key metros including Delhi, Mumbai, Bengaluru, and Chennai to rural locations.</p>
-                    <a href="domestic-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Domestic Process</a>
+                    <a href="domestic-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Domestic Service</a>
                 </div>
             </div>
 
             <!-- Service 4 -->
-            <div class="calc-grid animate-on-scroll" style="align-items: center; border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding-bottom: 4rem;">
-                <div style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_ashes.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md); order: 2;">
+            <div class="calc-grid animate-on-scroll" style="align-items: center; padding-bottom: 2rem;">
+                <div class="service-card-interactive" style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_ashes.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md); order: 2;">
                     <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">Urn Carriage Guidelines</h4>
                     <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">Urns must be airtight and made of metal or wood to satisfy airport security x-ray scanning checks.</p>
-                    <a href="ashes-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Ashes Rules</a>
+                    <a href="ashes-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Ashes Service</a>
                 </div>
                 <div style="order: 1;">
                     <span class="section-subtitle">Sacred Remains</span>
-                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-fire-burner text-gold" style="margin-right: 10px;"></i> Ashes & Cremated Remains Transport</h2>
+                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-fire-burner text-gold" style="margin-right: 10px;"></i> Ashes Repatriation</h2>
                     <p style="margin-bottom: 1.5rem;">For families carrying cremated remains, we secure cremation certificates, coordinate urn sealing declarations, and verify airline cabin hand luggage clearance stamps.</p>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Certified hermetic urn sealing seals and documentation.</li>
@@ -187,11 +195,18 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Section 5.3: Services Grid Deep Dive - Part 3 (Customs & Cargo) -->
+    <section class="section bg-lilies" style="border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding: 5rem 0;">
+        <div class="container" style="max-width: 1000px; display: flex; flex-direction: column; gap: 5rem;">
+
             <!-- Service 5 -->
             <div class="calc-grid animate-on-scroll" style="align-items: center; border-bottom: 1px solid rgba(197, 168, 128, 0.15); padding-bottom: 4rem;">
                 <div>
                     <span class="section-subtitle">Liaison Work</span>
-                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-stamp text-gold" style="margin-right: 10px;"></i> Consular & Embassy Clearances</h2>
+                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-stamp text-gold" style="margin-right: 10px;"></i> Custom Clearances</h2>
                     <p style="margin-bottom: 1.5rem;">Securing necessary clearance papers from destination or origin country consulates. Our runners manage passport cancellations and NOC certificates daily in New Delhi.</p>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Certified translations of local death logs.</li>
@@ -199,28 +214,28 @@
                         <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Ministry of External Affairs (MEA) stamps and apostilles.</li>
                     </ul>
                 </div>
-                <div style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_consular.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md);">
+                <div class="service-card-interactive" style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_consular.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md);">
                     <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">Liaison Coverage</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">We coordinate with diplomatic mission desks including US, UK, UAE, Canadian, and GCC embassies.</p>
-                    <a href="custom-clearance.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Consular Process</a>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">We coordinate with diplomatic mission desks including US, UK, UAE, and GCC embassies.</p>
+                    <a href="custom-clearance.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Custom Clearances</a>
                 </div>
             </div>
 
             <!-- Service 6 -->
             <div class="calc-grid animate-on-scroll" style="align-items: center; padding-bottom: 2rem;">
-                <div style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_cargo.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md); order: 2;">
-                    <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">Flight Dispatch Desk</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">Direct freight routing channels with global airlines including Air India, Emirates, and British Airways.</p>
-                    <a href="cargo-coordination.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Cargo Logistics</a>
+                <div class="service-card-interactive" style="background: linear-gradient(rgba(11, 27, 43, 0.85), rgba(5, 13, 21, 0.95)), url('assets/images/service_human_repatriation.jpg') no-repeat center center; background-size: cover; padding: 3rem 2rem; border-radius: var(--border-radius-sm); border: 1px solid var(--color-gold); color: white; box-shadow: var(--shadow-md); order: 2;">
+                    <h4 style="margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; color: var(--color-gold);">repatriation desk</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(244, 245, 247, 0.85); line-height: 1.5;">Specialized coordination of casketed remains shipping locally and across borders.</p>
+                    <a href="human-repatriation.html" class="btn btn-primary" style="padding: 0.6rem 1rem; font-size: 0.85rem; width: 100%; border: none;">View Human Repatriation</a>
                 </div>
                 <div style="order: 1;">
-                    <span class="section-subtitle">Aviation Freight</span>
-                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-plane-departure text-gold" style="margin-right: 10px;"></i> Air Cargo Booking & Flight Coordination</h2>
-                    <p style="margin-bottom: 1.5rem;">Securing specialized cargo hold reservations (HUM code) on commercial passenger flights, generating Airway Bills (AWB), and coordinating cargo warehouse dispatches.</p>
+                    <span class="section-subtitle">Casketed Remains</span>
+                    <h2 style="margin-bottom: 1.25rem; font-family: var(--font-heading);"><i class="fa-solid fa-plane-departure text-gold" style="margin-right: 10px;"></i> Human Repatriation</h2>
+                    <p style="margin-bottom: 1.5rem;">Securing direct commercial flight connections under the IATA HUM category. We manage specialized container packing, lead-lined soldering, government death NOCs, and tarmac customs handover.</p>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
-                        <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Direct airline desk HUM bookings and flight slot confirmations.</li>
-                        <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Airport Health Officer (APHO) cargo inspections.</li>
-                        <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Real-time flight tracking coordination logs.</li>
+                        <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Certified lead-lined zinc interior coffins and wooden outers.</li>
+                        <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Passport cancellation and consular No Objection Certificates (NOC).</li>
+                        <li><i class="fa-solid fa-circle-check text-gold" style="margin-right: 8px;"></i> Ground hearse transit logistics at departure and destination airports.</li>
                     </ul>
                 </div>
             </div>
@@ -254,25 +269,25 @@
     </section>
 
     <!-- Section 7: Process Timeline Brief -->
-    <section class="section bg-white">
+    <section class="section bg-lilies-sharp">
         <div class="container animate-on-scroll">
             <div class="section-header">
                 <span class="section-subtitle">Operational Desks</span>
-                <h2>Embassy NOC & Liaison paperwork</h2>
+                <h2>Embassy NOC & Paperwork</h2>
                 <p class="section-desc">Before cargo boarding is allowed, our legal runners submit files to consulates in Delhi to obtain transit visas for remains.</p>
             </div>
             <div class="stats-grid-3">
-                <div style="padding: 2rem; border: 1px solid rgba(197,168,128,0.15); border-radius: var(--border-radius-sm); text-align: center;">
+                <div style="background-color: #ffffff; padding: 2rem; border: 1px solid rgba(197,168,128,0.15); border-radius: var(--border-radius-sm); box-shadow: var(--shadow-sm); text-align: center;">
                     <i class="fa-solid fa-stamp text-gold" style="font-size: 2.2rem; margin-bottom: 1.25rem;"></i>
                     <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Consular Stamps</h4>
                     <p style="font-size: 0.9rem; color: var(--color-text-muted);">Securing the final No Objection Certificate (NOC) and consular visa permissions on the coffin papers.</p>
                 </div>
-                <div style="padding: 2rem; border: 1px solid rgba(197,168,128,0.15); border-radius: var(--border-radius-sm); text-align: center;">
+                <div style="background-color: #ffffff; padding: 2rem; border: 1px solid rgba(197,168,128,0.15); border-radius: var(--border-radius-sm); box-shadow: var(--shadow-sm); text-align: center;">
                     <i class="fa-solid fa-id-card-clip text-gold" style="font-size: 2.2rem; margin-bottom: 1.25rem;"></i>
                     <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Passport Cancellation</h4>
                     <p style="font-size: 0.9rem; color: var(--color-text-muted);">Diplomatic passport cancellation stamps, validating next-of-kin files and registry clearances.</p>
                 </div>
-                <div style="padding: 2rem; border: 1px solid rgba(197,168,128,0.15); border-radius: var(--border-radius-sm); text-align: center;">
+                <div style="background-color: #ffffff; padding: 2rem; border: 1px solid rgba(197,168,128,0.15); border-radius: var(--border-radius-sm); box-shadow: var(--shadow-sm); text-align: center;">
                     <i class="fa-solid fa-file-invoice text-gold" style="font-size: 2.2rem; margin-bottom: 1.25rem;"></i>
                     <h4 style="margin-bottom: 0.5rem; font-weight: 600;">eCARe Pre-Approvals</h4>
                     <p style="font-size: 0.9rem; color: var(--color-text-muted);">Submitting document uploads to Indian Airport Health Officers (APHO) via the online eCARe system.</p>
@@ -312,11 +327,12 @@
             <div>
                 <h4 class="footer-title">Repatriation Services</h4>
                 <ul class="footer-links-list">
-                    <li><a href="inbound-repatriation.html" class="footer-link">Inbound Repatriation to India</a></li>
-                    <li><a href="outbound-repatriation.html" class="footer-link">Outbound Repatriation from India</a></li>
-                    <li><a href="domestic-repatriation.html" class="footer-link">Interstate Domestic Transport</a></li>
-                    <li><a href="ashes-repatriation.html" class="footer-link">Ashes & Urns Clearance</a></li>
-                    <li><a href="custom-clearance.html" class="footer-link">Custom Clearance NOCs</a></li>
+                    <li><a href="inbound-repatriation.html" class="footer-link">Inbound Repatriation</a></li>
+                    <li><a href="outbound-repatriation.html" class="footer-link">Outbound Repatriation</a></li>
+                    <li><a href="domestic-repatriation.html" class="footer-link">Domestic Repatriation</a></li>
+                    <li><a href="ashes-repatriation.html" class="footer-link">Ashes Repatriation</a></li>
+                    <li><a href="custom-clearance.html" class="footer-link">Custom Clearances</a></li>
+                    <li><a href="human-repatriation.html" class="footer-link">Human Repatriation</a></li>
                 </ul>
             </div>
             
@@ -360,6 +376,9 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
 
 
 

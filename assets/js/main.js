@@ -230,11 +230,6 @@ const MAP_HUBS_DATA = {
         desc: "Handles East Coast municipal registration, health department seals, and direct flight cargo coordination.",
         phone: "+91 7991634187"
     },
-    toronto: {
-        name: "Toronto, Canada Hub",
-        desc: "Coordinates municipal death certificate translations and cross-border clearances for Canadian territories.",
-        phone: "+91 7991634187"
-    },
     riyadh: {
         name: "Riyadh, Saudi Arabia Hub",
         desc: "Liaison hub for Middle East cargo clearing, embassy NOC approvals, and airline casket clearances.",
@@ -268,7 +263,6 @@ function initReachMap() {
         'US': 'newyork',
         'SA': 'riyadh',
         'SG': 'singapore',
-        'CA': 'toronto',
         'AU': 'sydney'
     };
 
