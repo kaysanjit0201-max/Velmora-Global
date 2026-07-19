@@ -1,5 +1,5 @@
 ﻿/**
- * Velmora Global - Core JavaScript Engine
+ * Velmora Global International - Core JavaScript Engine
  * Drives Navigation, Mobile menus, Dropdowns, Interactive SVG Map, Calculator, and offline fallback
  */
 
@@ -139,7 +139,7 @@ function initMobileMenu() {
     overlayHeader.className = 'overlay-header';
     overlayHeader.innerHTML = `
         <a href="index.html" class="overlay-logo">
-            <img src="assets/images/logo.png" alt="Velmora Global Logo" class="overlay-logo-img">
+            <img src="assets/images/logo.png" alt="Velmora Global International Logo" class="overlay-logo-img">
         </a>
         <div class="nav-close">
             <i class="fa-solid fa-xmark"></i>
@@ -649,7 +649,7 @@ function initCostCalculator() {
         // Dynamic WhatsApp query text
         const resWaLink = document.getElementById("res-wa-link");
         if (resWaLink) {
-            const waMessage = encodeURIComponent(`Hello Velmora Global, I need information regarding human remains transport for lane: ${tariff.label}. Please guide me.`);
+            const waMessage = encodeURIComponent(`Hello Velmora Global International, I need information regarding human remains transport for lane: ${tariff.label}. Please guide me.`);
             resWaLink.href = `https://wa.me/918800505926?text=${waMessage}`;
         }
 
@@ -837,4 +837,5 @@ function initTestimonialsPageSlider() {
         startTimer();
     });
 }
+
 

@@ -1,5 +1,5 @@
-/* 
- * Velmora Global - Core Design System & Stylesheet
+﻿/* 
+ * Velmora Global International - Core Design System & Stylesheet
  * Custom Design matching Navy & Gold Brand Identity
  * Optimized for SEO, High-Performance Static Hosting
  */
@@ -2412,28 +2412,22 @@ ul li:hover {
 
 /* Blinking dot animation for Speak to an Expert button */
 .blinking-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #2ec4b6; /* Turquoise/Green blinking dot */
+    width: 12px;
+    height: 12px;
+    background-color: #00ff00; /* Neon Laser Green */
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7);
-    animation: pulse-green 1.5s infinite;
+    animation: led-blink 1s infinite;
 }
 
-@keyframes pulse-green {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7);
+@keyframes led-blink {
+    0%, 100% {
+        background-color: #00ff00;
+        box-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00;
     }
-    
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(46, 196, 182, 0);
-    }
-    
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(46, 196, 182, 0);
+    50% {
+        background-color: #005000;
+        box-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
     }
 }
+
