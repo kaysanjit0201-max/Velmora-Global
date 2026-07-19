@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Velmora Global - Core JavaScript Engine
  * Drives Navigation, Mobile menus, Dropdowns, Interactive SVG Map, Calculator, and offline fallback
  */
@@ -221,37 +221,37 @@ const MAP_HUBS_DATA = {
     delhi: {
         name: "Headquarters (New Delhi, India)",
         desc: "Main operations office, primary regulatory liaison desk, and cargo operations hub near IGI Airport.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     },
     london: {
         name: "London, United Kingdom (Europe Hub)",
         desc: "Coordinates clearances with EU/UK registries, repatriation clearances, and consulate submissions.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     },
     dubai: {
         name: "Dubai, United Arab Emirates (Middle East Hub)",
         desc: "Direct link for Gulf Cooperation Council countries. Handles heavy volume flight cargo links.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     },
     newyork: {
         name: "New York, United States (North America East)",
         desc: "Handles East Coast municipal registration, health department seals, and direct flight cargo coordination.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     },
     riyadh: {
         name: "Riyadh, Saudi Arabia Hub",
         desc: "Liaison hub for Middle East cargo clearing, embassy NOC approvals, and airline casket clearances.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     },
     singapore: {
         name: "Singapore Hub (Southeast Asia)",
         desc: "Primary transit gateway for East Asia. Handles administrative compliance checks and flight logistics.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     },
     sydney: {
         name: "Sydney, Australia (Oceania)",
         desc: "Facilitating repatriation clearances and cargo routes for Oceania. Full administrative and flight coordination.",
-        phone: "+91 7991634187"
+        phone: "+91 8800505926"
     }
 };
 
@@ -650,7 +650,7 @@ function initCostCalculator() {
         const resWaLink = document.getElementById("res-wa-link");
         if (resWaLink) {
             const waMessage = encodeURIComponent(`Hello Velmora Global, I need information regarding human remains transport for lane: ${tariff.label}. Please guide me.`);
-            resWaLink.href = `https://wa.me/917991634187?text=${waMessage}`;
+            resWaLink.href = `https://wa.me/918800505926?text=${waMessage}`;
         }
 
         // Display results
@@ -837,3 +837,4 @@ function initTestimonialsPageSlider() {
         startTimer();
     });
 }
+
