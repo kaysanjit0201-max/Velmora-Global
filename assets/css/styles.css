@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * Velmora Global International - Core Design System & Stylesheet
  * Custom Design matching Navy & Gold Brand Identity
  * Optimized for SEO, High-Performance Static Hosting
@@ -1055,8 +1055,8 @@ p {
 
 .results-metrics-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
 }
 
 .metric-card {

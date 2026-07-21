@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Velmora Global International - Core JavaScript Engine
  * Drives Navigation, Mobile menus, Dropdowns, Interactive SVG Map, Calculator, and offline fallback
  */
@@ -466,6 +466,11 @@ const COUNTRY_NAMES = {
     "LK": "Sri Lanka",
     "VN": "Vietnam",
     "AE": "United Arab Emirates (UAE)",
+    "SA": "Saudi Arabia",
+    "QA": "Qatar",
+    "KW": "Kuwait",
+    "OM": "Oman",
+    "BH": "Bahrain",
     "TH": "Thailand",
     "MM": "Myanmar",
     "LA": "Laos",
@@ -473,7 +478,6 @@ const COUNTRY_NAMES = {
     "ID": "Indonesia",
     "IT": "Italy",
     "DE": "Germany",
-    "OM": "Oman",
     "PT": "Portugal",
     "ES": "Spain",
     "MA": "Morocco",
@@ -526,30 +530,23 @@ const DOCS_LIST = {
     ]
 };
 
-const PRICING_TARIFFS = {
-    // UK
-    "GB-IN": { cost: "€6,500 - €7,500", time: "5 - 7 Working Days", type: "inbound", label: "UK to India Inbound" },
-    "IN-GB": { cost: "€6,500 - €7,500", time: "5 - 7 Working Days", type: "outbound", label: "India to UK Outbound" },
-    
-    // USA
-    "US-IN": { cost: "USD 7,500 - USD 10,500", time: "5 - 7 Working Days", type: "inbound", label: "USA to India Inbound" },
-    "IN-US": { cost: "USD 7,500 - USD 10,500", time: "5 - 7 Working Days", type: "outbound", label: "India to USA Outbound" },
-    
-    // Singapore
-    "SG-IN": { cost: "SGD 3,800 - SGD 4,200", time: "2 - 4 Working Days", type: "inbound", label: "Singapore to India Inbound" },
-    "IN-SG": { cost: "SGD 3,800 - SGD 4,200", time: "3 - 5 Working Days", type: "outbound", label: "India to Singapore Outbound" },
-    
-    // UAE (Doubled)
-    "AE-IN": { cost: "AED 18,000 - AED 25,000", time: "2 - 3 Working Days", type: "inbound", label: "UAE to India Inbound" },
-    "IN-AE": { cost: "₹3,60,000 - ₹4,80,000", time: "3 - 4 Working Days", type: "outbound", label: "India to UAE Outbound" },
-    
-    // Saudi Arabia (Doubled)
-    "SA-IN": { cost: "SAR 22,000 - SAR 28,000", time: "3 - 4 Working Days", type: "inbound", label: "Saudi Arabia to India Inbound" },
-    "IN-SA": { cost: "₹3,80,000 - ₹5,00,000", time: "4 - 5 Working Days", type: "outbound", label: "India to Saudi Arabia Outbound" },
-    
-    // Australia (Doubled)
-    "AU-IN": { cost: "AUD 13,000 - AUD 17,000", time: "4 - 6 Working Days", type: "inbound", label: "Australia to India Inbound" },
-    "IN-AU": { cost: "₹5,60,000 - ₹7,20,000", time: "5 - 7 Working Days", type: "outbound", label: "India to Australia Outbound" }
+// Region lists and currency cost mappings
+const GULF_COUNTRIES = ["AE", "OM", "SA", "QA", "KW", "BH"];
+const EUROPE_COUNTRIES = ["GB", "DE", "FR", "IT", "ES", "AT", "BE", "CZ", "PL", "PT", "ME", "RU"];
+const USA_COUNTRIES = ["US"];
+
+const GULF_CURRENCY_COSTS = {
+    "AE": "AED 11,000 - 22,000",
+    "SA": "SAR 11,000 - 22,500",
+    "OM": "OMR 1,150 - 2,300",
+    "QA": "QAR 11,000 - 22,000",
+    "KW": "KWD 920 - 1,840",
+    "BH": "BHD 1,130 - 2,260"
+};
+
+const EUROPE_CURRENCY_COSTS = {
+    "GB": "GBP 3,700 - 7,400"
+    // All other Eurozone countries default to EUR
 };
 
 function initCostCalculator() {
@@ -573,87 +570,100 @@ function initCostCalculator() {
             return;
         }
 
-        // Determine Route Key
-        let routeKey = `${sourceVal}-${destVal}`;
-        let tariff = PRICING_TARIFFS[routeKey];
-        let documentType = "domestic"; // Fallback
+        let cost = null; // null = hide price card, show transit time only
+        let time = "4 - 6 Working Days";
+        let type = "inbound";
+        let label = "";
+        let documentType = "inbound";
 
-        // Check if domestic
+        const sourceName = COUNTRY_NAMES[sourceVal] || sourceVal;
+        const destName = COUNTRY_NAMES[destVal] || destVal;
+
         if (sourceVal === "IN" && destVal === "IN") {
-            tariff = {
-                cost: "₹65,000 - ₹1,20,000",
-                time: "1 - 2 Working Days",
-                type: "domestic",
-                label: "Domestic Repatriation (Within India)"
-            };
+            // Domestic Transfer within India: Rupees
+            cost = "Rs. 25,000 - 80,000";
+            time = "1 - 2 Working Days";
+            type = "domestic";
+            label = "Domestic Repatriation (Within India)";
             documentType = "domestic";
-        } else if (typeVal === "ashes") {
-            // Urn/Ashes overrides standard remains costs
-            documentType = "ashes";
-            if (tariff) {
-                // Ashes is generally cheaper than human remains cargo
-                tariff = {
-                    cost: sourceVal === "IN" ? "₹1,70,000 - ₹2,80,000" : "USD 3,000 - USD 5,000",
-                    time: tariff.time,
-                    type: "ashes",
-                    label: tariff.label.replace("Inbound", "Ashes").replace("Outbound", "Ashes")
-                };
+        } else if (destVal === "IN") {
+            // Inbound Repatriation to India: Respective Origin Country Currency
+            documentType = (typeVal === "ashes") ? "ashes" : "inbound";
+            type = "inbound";
+            label = `${sourceName} to India Inbound`;
+
+            if (GULF_COUNTRIES.includes(sourceVal)) {
+                cost = GULF_CURRENCY_COSTS[sourceVal] || "AED 11,000 - 22,000";
+                time = "2 - 4 Working Days";
+            } else if (EUROPE_COUNTRIES.includes(sourceVal)) {
+                cost = EUROPE_CURRENCY_COSTS[sourceVal] || "EUR 4,400 - 8,800";
+                time = "4 - 6 Working Days";
+            } else if (USA_COUNTRIES.includes(sourceVal)) {
+                cost = "USD 7,200 - 14,500";
+                time = "5 - 7 Working Days";
             } else {
-                tariff = {
-                    cost: "USD 3,000 - USD 5,000",
-                    time: "3 - 5 Working Days",
-                    type: "ashes",
-                    label: `Custom Ashes Lane (${COUNTRY_NAMES[sourceVal]} to ${COUNTRY_NAMES[destVal]})`
-                };
+                // Inbound from other regions: show transit time only
+                cost = null;
+                time = "3 - 6 Working Days";
             }
-        } else if (tariff) {
-            documentType = tariff.type;
+        } else if (sourceVal === "IN") {
+            // Outbound Repatriation from India: show transit time only
+            documentType = (typeVal === "ashes") ? "ashes" : "outbound";
+            type = "outbound";
+            label = `India to ${destName} Outbound`;
+            cost = null;
+            time = "4 - 7 Working Days";
         } else {
-            // General custom international lane (Doubled)
-            const isOutbound = (sourceVal === "IN");
-            tariff = {
-                cost: isOutbound ? "₹5,00,000 - ₹7,60,000" : "USD 7,000 - USD 10,400",
-                time: "4 - 7 Working Days",
-                type: isOutbound ? "outbound" : "inbound",
-                label: `International Lane (${COUNTRY_NAMES[sourceVal]} to ${COUNTRY_NAMES[destVal]})`
-            };
-            documentType = tariff.type;
+            // Other International Lanes: show transit time only
+            documentType = (typeVal === "ashes") ? "ashes" : "inbound";
+            type = "international";
+            label = `International Lane (${sourceName} to ${destName})`;
+            cost = null;
+            time = "5 - 8 Working Days";
         }
 
-        // Update display DOM using CORRECT IDs
+        // DOM elements
         const resRoute = document.getElementById("res-route");
         const resBadge = document.getElementById("res-badge");
+        const resPriceCard = document.getElementById("res-price-card");
         const resPrice = document.getElementById("res-price");
         const resTime = document.getElementById("res-time");
         const resDocsList = document.getElementById("res-docs-list");
 
-        if (resRoute) resRoute.innerText = tariff.label;
-        if (resBadge) resBadge.innerText = tariff.type.toUpperCase() + " SERVICE";
-        if (resPrice) resPrice.innerText = tariff.cost;
-        if (resTime) resTime.innerText = tariff.time;
+        if (resRoute) resRoute.innerText = label;
+        if (resBadge) resBadge.innerText = type.toUpperCase() + " SERVICE";
+        if (resTime) resTime.innerText = time;
+
+        // Toggle Estimated Price Card visibility based on route rules
+        if (resPriceCard) {
+            if (cost) {
+                resPriceCard.style.display = "block";
+                if (resPrice) resPrice.innerText = cost;
+            } else {
+                resPriceCard.style.display = "none";
+            }
+        }
 
         // Load document items
         if (resDocsList) {
             resDocsList.innerHTML = "";
-            const docs = DOCS_LIST[documentType];
-            if (docs) {
-                docs.forEach(docText => {
-                    const li = document.createElement("li");
-                    li.className = "docs-item";
-                    li.innerHTML = `<span class="docs-check-icon"><i class="fa-solid fa-file-shield"></i></span><span>${docText}</span>`;
-                    resDocsList.appendChild(li);
-                });
-            }
+            const docs = DOCS_LIST[documentType] || DOCS_LIST["inbound"];
+            docs.forEach(docText => {
+                const li = document.createElement("li");
+                li.className = "docs-item";
+                li.innerHTML = `<span class="docs-check-icon"><i class="fa-solid fa-file-shield"></i></span><span>${docText}</span>`;
+                resDocsList.appendChild(li);
+            });
         }
 
         // Dynamic WhatsApp query text
         const resWaLink = document.getElementById("res-wa-link");
         if (resWaLink) {
-            const waMessage = encodeURIComponent(`Hello Velmora Global International, I need information regarding human remains transport for lane: ${tariff.label}. Please guide me.`);
+            const waMessage = encodeURIComponent(`Hello Velmora Global International, I need information regarding human remains transport for lane: ${label}. Please guide me.`);
             resWaLink.href = `https://wa.me/918800505926?text=${waMessage}`;
         }
 
-        // Display results
+        // Display results panel
         placeholder.style.display = "none";
         display.style.display = "flex";
     }
